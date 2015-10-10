@@ -45,11 +45,14 @@ yield return Operation.ConsumeGenerate<XDocument, XDocument>(d =>
 ImporterManager manager = new ImporterManager();
 manager.AddImporter(...);
 manager.AddImporter(...);
+
 ...
 
 string fileExtension = ".SomeExtension";
-Stream fileStream = ...;
+Stream fileStream = GetFileStream();
 
 BaseImporter importer = manager.GetImporterForFileExtension(fileExtension);
-var result = await manager.ImportAsync(fileStream);
+
+if (importer != null)
+	var result = await importer.ImportAsync(fileStream);
 ```
