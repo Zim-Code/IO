@@ -11,5 +11,5 @@ $content | Out-File $root\NuGet\ZimCode.IO.compiled.nuspec
 
 & $root\NuGet\NuGet.exe pack $root\NuGet\ZimCode.IO.compiled.nuspec
 
-& $root\NuGet\NuGet.exe setapikey $env:nuget_key
-& $root\NuGet\NuGet.exe push $root\NuGet\*.nupkg
+& $root\NuGet\NuGet.exe setapikey $env:nuget_key -Verbosity quiet
+& $root\NuGet\NuGet.exe push *.nupkg
