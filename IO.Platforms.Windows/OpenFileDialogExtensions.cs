@@ -23,6 +23,12 @@ namespace ZimCode.IO.Platforms.Windows
             return dialog;
         }
 
+        /// <summary>
+        /// Get a filter string for a FileDialog.
+        /// </summary>
+        /// <param name="initialFilter">Initial import filter.</param>
+        /// <param name="importers">The importers to add to the initialFilter string.</param>
+        /// <returns></returns>
         public static string GetFilterString(string initialFilter, IEnumerable<BaseImporter> importers)
         {
             string filterResult = string.IsNullOrWhiteSpace(initialFilter) ? "" : initialFilter + "|";
