@@ -1,4 +1,4 @@
-# ZimCode.IO
+# ZimCode.IO [![Build status](https://ci.appveyor.com/api/projects/status/31si5642tx62h9om/branch/master?svg=true)](https://ci.appveyor.com/project/Zim-Code/io/branch/master)
 
 ZimCode.IO is an importer library to make handling files easy.
 
@@ -27,4 +27,29 @@ yield return Operation.ConsumeGenerate<XDocument, XDocument>(d =>
     d.AddFirst(new XElement("AddedByLoader"));
     return d;
 });
+```
+
+
+## Examples
+
+### Projects
+
+[WpfExample](https://github.com/Zim-Code/IO/tree/master/Examples/WpfExample)
+
+
+### Quick Examples
+
+#### ImporterManager
+
+```C#
+ImporterManager manager = new ImporterManager();
+manager.AddImporter(...);
+manager.AddImporter(...);
+...
+
+string fileExtension = ".SomeExtension";
+Stream fileStream = ...;
+
+BaseImporter importer = manager.GetImporterForFileExtension(fileExtension);
+var result = await manager.ImportAsync(fileStream);
 ```

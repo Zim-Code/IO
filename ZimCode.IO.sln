@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO.Platforms.Windows.Tests"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{8686904B-41CA-42B1-8007-1FD8511767F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExample", "WpfExample\WpfExample.csproj", "{88D6FAE3-4395-4244-BDC4-ACD78FD30CBB}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,15 +35,8 @@ Global
 		{589A332A-BD7B-4FA0-AB8E-19594B35B3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{589A332A-BD7B-4FA0-AB8E-19594B35B3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{589A332A-BD7B-4FA0-AB8E-19594B35B3FB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{88D6FAE3-4395-4244-BDC4-ACD78FD30CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88D6FAE3-4395-4244-BDC4-ACD78FD30CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88D6FAE3-4395-4244-BDC4-ACD78FD30CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88D6FAE3-4395-4244-BDC4-ACD78FD30CBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{88D6FAE3-4395-4244-BDC4-ACD78FD30CBB} = {8686904B-41CA-42B1-8007-1FD8511767F9}
 	EndGlobalSection
 EndGlobal
