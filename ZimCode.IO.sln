@@ -5,12 +5,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO", "IO\IO.csproj", "{D6A8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO.Tests", "IO.Tests\IO.Tests.csproj", "{EB30D6A4-8C34-47C1-ACC0-0AB2F376D271}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZimCode.IO.Platforms.Windows", "IO.Platforms.Windows\ZimCode.IO.Platforms.Windows.csproj", "{16924D43-68C4-42B0-8C38-050BE84A8334}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO.Platforms.Windows.Tests", "IO.Platforms.Windows.Tests\IO.Platforms.Windows.Tests.csproj", "{589A332A-BD7B-4FA0-AB8E-19594B35B3FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16924D43-68C4-42B0-8C38-050BE84A8334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16924D43-68C4-42B0-8C38-050BE84A8334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16924D43-68C4-42B0-8C38-050BE84A8334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16924D43-68C4-42B0-8C38-050BE84A8334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{589A332A-BD7B-4FA0-AB8E-19594B35B3FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{589A332A-BD7B-4FA0-AB8E-19594B35B3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{589A332A-BD7B-4FA0-AB8E-19594B35B3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{589A332A-BD7B-4FA0-AB8E-19594B35B3FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D6A80349-0812-469A-8B57-1E5F1C1DFA4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6A80349-0812-469A-8B57-1E5F1C1DFA4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6A80349-0812-469A-8B57-1E5F1C1DFA4A}.Release|Any CPU.ActiveCfg = Release|Any CPU

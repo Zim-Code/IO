@@ -33,10 +33,10 @@ namespace IO.Tests
 
             XDocument result = (XDocument)(await importer.ImportAsync(new MemoryStream(Encoding.ASCII.GetBytes(SimpleXml)), reporter));
 
-            if (importer.ErrorMessage != null)
-                Assert.Fail("There was an error message:\n{0}", importer.ErrorMessage);
+            if (reporter.ErrorMessage != null)
+                Assert.Fail("There was an error message:\n{0}", reporter.ErrorMessage);
 
-            Assert.IsTrue(importer.CompletedWithoutError, "Completed with errors");
+            Assert.IsTrue(reporter.CompletedWithoutError, "Completed with errors");
 
             Assert.NotNull(result, "The result was null");
 

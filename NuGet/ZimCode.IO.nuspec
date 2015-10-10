@@ -16,6 +16,10 @@
     <file src="..\IO\bin\Release\ZimCode.IO.dll" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\ZimCode.IO.dll" />
     <file src="..\IO\bin\Release\ZimCode.IO.pdb" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\ZimCode.IO.pdb" />
     <file src="..\IO\bin\Release\ZimCode.IO.xml" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\ZimCode.IO.xml" />
+
+    <file src="..\IO.Platforms.Windows\bin\Release\ZimCode.IO.Platforms.Windows.dll" target="lib\win\ZimCode.IO.Platforms.Windows.dll" />
+    <file src="..\IO.Platforms.Windows\bin\Release\ZimCode.IO.Platforms.Windows.pdb" target="lib\win\ZimCode.IO.Platforms.Windows.pdb" />
+    <file src="..\IO.Platforms.Windows\bin\Release\ZimCode.IO.Platforms.Windows.xml" target="lib\win\ZimCode.IO.Platforms.Windows.xml" />
   </files>
 </package>
 
