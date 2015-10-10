@@ -2,6 +2,11 @@
 
 ZimCode.IO is an importer library to make handling files easy.
 
+ZimCode.IO is avaliable on [NuGet](https://www.nuget.org/packages/ZimCode.IO/) or through the package manager console
+```
+PM> Install-Package ZimCode.IO
+```
+
 For an example on how to create your own importer take a look at the
 implementation of the [XmlImporter](https://github.com/Zim-Code/IO/blob/master/IO/XmlImporter.cs) and [XmlLoader](https://github.com/Zim-Code/IO/blob/master/IO/XmlLoader.cs) classes.
 
