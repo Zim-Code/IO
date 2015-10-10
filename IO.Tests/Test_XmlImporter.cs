@@ -26,7 +26,12 @@ namespace IO.Tests
         public async Task XmlImporterTest()
         {
             XmlImporter importer = new XmlImporter();
-            XDocument result = (XDocument)(await importer.ImportAsync(new MemoryStream(Encoding.ASCII.GetBytes(SimpleXml))));
+
+            ProgressReporter reporter = new ProgressReporter(100);
+            int reportCount = 0;
+            reporter.ProgressChanged += (s, e) => reportCount++;
+
+            XDocument result = (XDocument)(await importer.ImportAsync(new MemoryStream(Encoding.ASCII.GetBytes(SimpleXml)), reporter));
 
             if (importer.ErrorMessage != null)
                 Assert.Fail("There was an error message:\n{0}", importer.ErrorMessage);
@@ -37,6 +42,9 @@ namespace IO.Tests
 
             XElement element = result.Descendants("heading").FirstOrDefault();
             Assert.AreEqual("Reminder", element.Value, "Could not decode value");
+
+            Assert.AreEqual(1, reportCount, "XmlImporter did not report progress.");
+            Assert.AreEqual(100, reporter.Progress);
         }
     }
 }

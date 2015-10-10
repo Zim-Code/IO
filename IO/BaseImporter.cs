@@ -19,7 +19,12 @@ namespace ZimCode.IO
 
         public IEnumerable<string> FileExtensions { get; private set; }
 
-        public abstract Task<object> ImportAsync(Stream stream);
+        public abstract Task<object> ImportAsync(Stream stream, ProgressReporter reporter = null);
+
+        protected void SetProgress(ProgressReporter reporter, double progress)
+        {
+            reporter?.SetProgress(progress);
+        }
     }
 
     public abstract class BaseImporter<TResult> : BaseImporter
@@ -35,7 +40,7 @@ namespace ZimCode.IO
 
         public string ErrorMessage { get; private set; }
 
-        public override async Task<object> ImportAsync(Stream stream)
+        public override async Task<object> ImportAsync(Stream stream, ProgressReporter reporter = null)
         {
             try
             {
@@ -48,10 +53,13 @@ namespace ZimCode.IO
                 if (!o.IsValidReturnValue(typeof(TResult)))
                     throw new Exception($"The last operation in the loader must be a Generate operation with the result type of {typeof(TResult).FullName}.");
 
+                int operationCount = operations.Count();
+                int operationsCompleted = 0;
                 object result = null;
                 foreach (Operation operation in operations)
                 {
                     result = await operation.ExecuteAsync(result);
+                    SetProgress(reporter, operationCount / ++operationsCompleted);
                 }
                 TResult resultCast = (TResult)result;
                 CompletedWithoutError = true;
