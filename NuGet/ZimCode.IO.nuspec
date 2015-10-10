@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ZimCode.IO</id>
+    <version>$version$</version>
+    <title>ZimCode.IO</title>
+    <authors>Jacob Ebey</authors>
+    <owners>Jacob Ebey</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Library for easily creating file importers/loaders with automatic progress reporting.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Jacob Ebey 2015</copyright>
+    <tags>Zim, Code, ZimCode, IO, Import, Importer, Loader, Load, File, Jacob, Ebey</tags>
+  </metadata>
+  <files>
+    <file src="..\IO\bin\Release\ZimCode.IO.dll" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\ZimCode.IO.dll" />
+    <file src="..\IO\bin\Release\ZimCode.IO.pdb" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\ZimCode.IO.pdb" />
+    <file src="..\IO\bin\Release\ZimCode.IO.xml" target="lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\ZimCode.IO.xml" />
+  </files>
+</package>
+
