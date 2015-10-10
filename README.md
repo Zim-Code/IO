@@ -2,6 +2,8 @@
 
 ZimCode.IO is an importer library to make handling files easy.
 
+**Discussion/Feedback welcome [HERE](https://news.ycombinator.com/item?id=10366899)**
+
 ZimCode.IO is avaliable on [NuGet](https://www.nuget.org/packages/ZimCode.IO/) or through the package manager console
 ```
 PM> Install-Package ZimCode.IO
