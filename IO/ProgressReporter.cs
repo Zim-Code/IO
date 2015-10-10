@@ -7,6 +7,7 @@ namespace ZimCode.IO
     /// </summary>
     public class ProgressReporter
     {
+        string label;
         double maxProgress;
         double progress = 0.0;
 
@@ -17,6 +18,21 @@ namespace ZimCode.IO
         public ProgressReporter(double maxProgress = 1.0)
         {
             this.maxProgress = maxProgress;
+        }
+
+        /// <summary>
+        /// Gets the label.
+        /// </summary>
+        /// <value>The label.</value>
+        public string Label
+        {
+            get { return label; }
+            internal set
+            {
+                if (label == value) return;
+                label = value;
+                OnLabelChanged(new EventArgs());
+            }
         }
 
         /// <summary>
@@ -47,6 +63,11 @@ namespace ZimCode.IO
         /// <value>The error message.</value>
         public string ErrorMessage { get; private set; }
 
+        internal void SetLabel(string label)
+        {
+            Label = label;
+        }
+
         internal void SetCompletedWithoutError(bool value)
         {
             CompletedWithoutError = value;
@@ -59,7 +80,16 @@ namespace ZimCode.IO
 
         internal void SetProgress(double progress)
         {
-            Progress = progress * maxProgress;
+            Progress = maxProgress * progress;
+        }
+
+        /// <summary>
+        /// Raises the label changed event.
+        /// </summary>
+        /// <param name="e">E.</param>
+        protected virtual void OnLabelChanged(EventArgs e)
+        {
+            LabelChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -70,6 +100,11 @@ namespace ZimCode.IO
         {
             ProgressChanged?.Invoke(this, e);
         }
+
+        /// <summary>
+        /// Occurs when label changed.
+        /// </summary>
+        public event EventHandler LabelChanged;
 
         /// <summary>
         /// Occurs when progress changed.

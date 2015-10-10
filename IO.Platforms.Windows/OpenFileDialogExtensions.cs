@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 using ZimCode.IO;
@@ -18,12 +19,18 @@ namespace ZimCode.IO.Platforms.Windows
         /// <param name="importers">Importers to add to the filter.</param>
         public static T AddImporterFileTypes<T>(this T dialog, params BaseImporter[] importers) where T : FileDialog
         {
-            string filterResult = string.IsNullOrWhiteSpace(dialog.Filter) ? "" : dialog.Filter + "|";
+            dialog.Filter = GetFilterString(dialog.Filter, importers);
+            return dialog;
+        }
+
+        public static string GetFilterString(string initialFilter, IEnumerable<BaseImporter> importers)
+        {
+            string filterResult = string.IsNullOrWhiteSpace(initialFilter) ? "" : initialFilter + "|";
 
             string importerSeparator = "";
             foreach (var importer in importers)
             {
-                dialog.Filter += importerSeparator;
+                filterResult += importerSeparator;
 
                 string filterSeparator = "";
                 filterResult += importer.Description + " (";
@@ -44,8 +51,7 @@ namespace ZimCode.IO.Platforms.Windows
                 importerSeparator = "|";
             }
 
-            dialog.Filter = filterResult;
-            return dialog;
+            return filterResult;
         }
     }
 }

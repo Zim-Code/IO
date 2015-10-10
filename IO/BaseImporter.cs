@@ -46,6 +46,16 @@ namespace ZimCode.IO
         public abstract Task<object> ImportAsync(Stream stream, ProgressReporter reporter = null);
 
         /// <summary>
+        /// Sets the progress label.
+        /// </summary>
+        /// <param name="reporter">Reporter.</param>
+        /// <param name="label">The label.</param>
+        protected void SetProgressLabel(ProgressReporter reporter, string label)
+        {
+            reporter?.SetLabel(label);
+        }
+
+        /// <summary>
         /// Sets if ImportAsync completed without error.
         /// </summary>
         /// <param name="reporter">Reporter.</param>
@@ -122,9 +132,11 @@ namespace ZimCode.IO
                 object result = null;
                 foreach (Operation operation in operations)
                 {
+                    SetProgressLabel(reporter, operation.Label);
                     result = await operation.ExecuteAsync(result);
-                    SetProgress(reporter, operationCount / ++operationsCompleted);
+                    SetProgress(reporter, ++operationsCompleted / (double)operationCount);
                 }
+                SetProgressLabel(reporter, "Finished...");
                 TResult resultCast = (TResult)result;
                 SetCompletedWithoutError(reporter, true);
                 return resultCast;

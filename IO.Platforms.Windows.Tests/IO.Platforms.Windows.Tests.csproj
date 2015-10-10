@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -43,9 +43,9 @@
       <Project>{D6A80349-0812-469A-8B57-1E5F1C1DFA4A}</Project>
       <Name>IO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IO.Platforms.Windows\ZimCode.IO.Platforms.Windows.csproj">
+    <ProjectReference Include="..\IO.Platforms.Windows\IO.Platforms.Windows.csproj">
       <Project>{16924D43-68C4-42B0-8C38-050BE84A8334}</Project>
-      <Name>ZimCode.IO.Platforms.Windows</Name>
+      <Name>IO.Platforms.Windows</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

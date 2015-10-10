@@ -15,7 +15,7 @@ namespace ZimCode.IO
 
         public System.Collections.Generic.IEnumerable<Operation> GetOperations()
         {
-            yield return Operation.Generate<XDocument>(OpenDocument);
+            yield return Operation.Generate("Opening Document", OpenDocument);
         }
 
         private XDocument OpenDocument()
