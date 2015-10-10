@@ -19,19 +19,22 @@ if any exceptions occur, are avaliable through the [ProgressReporter](https://gi
 You can also chain Operations for an automatic progress report.
 
 ```C#
-// Load the XDocument. The XDocument returned from the OpenDocument
-// method will be passed to the next operation if it is a Consume or
-// ConsumeGenerate. Here we use ConsumeGenerate because we need a
-// result as the last operation in a loader.
-yield return Operation.Generate<XDocument>(OpenDocument);
-
-// Here we consume the XDocument that was loaded from the previous
-// operation and add a new first element to it.
-yield return Operation.ConsumeGenerate<XDocument, XDocument>(d =>
+public IEnumerable<Operation> GetOperations()
 {
-    d.AddFirst(new XElement("AddedByLoader"));
-    return d;
-});
+    // Load the XDocument. The XDocument returned from the OpenDocument
+    // method will be passed to the next operation if it is a Consume or
+    // ConsumeGenerate. Here we use ConsumeGenerate because we need a
+    // result as the last operation in a loader.
+    yield return Operation.Generate<XDocument>(OpenDocument);
+
+    // Here we consume the XDocument that was loaded from the previous
+    // operation and add a new first element to it.
+    yield return Operation.ConsumeGenerate<XDocument, XDocument>(d =>
+    {
+        d.AddFirst(new XElement("AddedByLoader"));
+        return d;
+    });
+}
 ```
 
 
