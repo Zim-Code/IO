@@ -29,4 +29,4 @@ after_test:
 artifacts:
   - path: IO\bin\Release\ZimCode.IO.dll
     name: ZimCode.IO.dll
-  - path: '**\*.nupkg'
+  - path: 'NuGet\*.nupkg'
