@@ -7,6 +7,8 @@
     <authors>Jacob Ebey</authors>
     <owners>Jacob Ebey</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/Zim-Code/IO</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/Zim-Code/NugetReferences/master/icon.jpg</iconUrl>
     <description>Library for easily creating file importers/loaders with automatic progress reporting.</description>
     <releaseNotes></releaseNotes>
     <copyright>Jacob Ebey 2015</copyright>
