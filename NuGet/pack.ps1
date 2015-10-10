@@ -11,3 +11,4 @@ $content | Out-File $root\NuGet\ZimCode.IO.compiled.nuspec
 
 & $root\NuGet\NuGet.exe pack $root\NuGet\ZimCode.IO.compiled.nuspec
 
+& $root\NuGet\NuGet.exe push $root\NuGet\*.nupkg $nuget_key
